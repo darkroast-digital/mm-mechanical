@@ -1,0 +1,198 @@
+.hero {
+	background: #000;
+	background-image: url('../img/hero.jpg');
+	background-size: cover;
+	background-position: center center;
+	height: 100vh;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	overflow: hidden;
+	position: relative;
+	
+	@include mq(m) {
+		align-items: center;
+		justify-content: center;
+	}
+
+	&:after {
+		content: '';
+		position: absolute;
+		height: 100%;
+		width: 200%;
+		right: -100%;
+		background: $primary;
+		mix-blend-mode: multiply;
+		transform: rotate(-45deg);
+		z-index: 10;
+		
+		@include mq(m) {
+			bottom: -50%;
+		}
+	}
+	
+	&__content {
+		margin-top: 6rem;
+		margin-right: 4rem;
+		max-width: 50%;
+		position: relative;
+		right: 0;
+		z-index: 20;
+		
+		@include mq(m) {
+			max-width: 80%;
+			margin: 0 !important;
+			margin-top: 17rem !important;
+		}
+
+		img {
+			max-width: 80%;
+		}
+		
+		h1,
+		h4 {
+			text-transform: uppercase;
+			font-weight: bold;
+			color: #fff;
+			margin-bottom: $vertical-rhythm / 2;
+			line-height: 100%;
+			padding: 1rem;
+			background: $dark;
+			float: left;
+			clear: both;
+		}
+		
+		h1 {
+			
+			@include mq(m) {
+				font-size: 2.5rem;
+			}
+		}
+		
+		h4 {
+			font-size: 1.25rem;
+			color: $secondary;
+			
+			@include mq(m) {
+				font-size: 1rem;
+			}
+		}
+		
+		a {
+			display: block;
+			@include type(font-size, 30rem, 75rem, 1rem, 1.25rem);
+			color: $secondary;
+			text-transform: uppercase;
+			font-weight: bold;
+			white-space: nowrap;
+			
+			@include mq(m) {
+				display: none;
+			}
+			
+			span {
+				color: $dark;
+			}
+		}
+		
+		p {
+			clear: both;
+			background: rgba(#fff, .8);
+			margin-bottom: 0;
+			padding: 1rem;
+			color: $body-font-colour;
+			
+			@include mq(m) {
+				display: none;
+			}
+			
+			&:first-of-type {
+				padding-bottom: 0;
+			}
+		}
+	}
+}
+
+.hero-form {
+	clear: both;
+	position: relative;
+	right: 0;
+	padding: 1rem;
+	background: rgba($dark, .9);
+	box-shadow: 0 1px 8px 2px rgba($dark, .9);
+	margin-top: 4.5rem;
+	
+	@include mq(m) {
+		margin-top: 0rem;
+	}
+	
+	h4 {
+		top: 0;
+		right: 0;
+	}
+
+	a {
+		display: block;
+
+		span {
+			color: #fff;
+		}
+	}
+	
+	#form,
+	#form-header{
+		display: flex;
+		flex-direction: column;
+
+		input,
+		textarea {
+			background: darken($dark, 2%);
+			border-radius: 3px;
+			padding: .3rem;
+			margin-bottom: .5rem;
+			border-color: #444;
+			
+			@include mq(m) {
+				display: none;
+			}
+		}
+
+		.submit {
+			background: $secondary;
+			cursor: pointer;
+		}
+	}
+}
+
+.hero-title {
+	margin-left: 4rem;
+	background: rgba($secondary, .8);
+	position: absolute;
+	z-index: 20;
+	max-width: 60%;
+	bottom: 4rem;
+	left: 0;
+	padding: 1rem;
+	box-shadow: 0 1px 4px 1px rgba($dark, .9);
+	
+	@include mq(m) {
+		bottom: auto;
+		top: 8rem;
+		left: -2rem;
+		max-width: 80%;
+	}
+	
+	h1 {
+		@include type(font-size, 30rem, 75rem, 1.5rem, 2.25rem);
+		font-weight: bold;
+		margin-bottom: 1rem;
+		line-height: 1.2;
+		color: #fff;
+		text-transform: uppercase;
+		
+		span {
+			color: $primary;
+		}
+	}
+}

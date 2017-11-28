@@ -1,0 +1,135 @@
+.contact {
+	@include row($direction: column);
+	padding: 3rem 0; 
+	
+	&__intro {
+		display: flex;
+		align-items: center;
+		margin-bottom: $vertical-rhythm * 1.5;
+		
+		img {
+			max-width: 250px;
+		}
+		
+		@include mq(m) {
+			display: block;
+			
+			img {
+				margin: 0 auto;
+			}
+		}
+	}
+	
+	
+	&__form {
+		display: flex;
+		
+		@include mq(m) {
+			display: block;
+		}
+		
+		i {
+			color: $secondary;
+			margin-right: .5rem;
+		}
+		
+		&--details { 
+			@include col(four);
+			
+			@include mq(m) {
+				margin-bottom: 2rem; 
+			}
+		}
+		
+		&--fields { 
+			@include col(four); 
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			 
+			
+			.form__input {
+				background: $dark;
+				border-color: #444;
+				border-radius: 3px; 
+				margin-bottom: .5rem;
+				padding: .3rem;      
+			} 
+		}  
+		        
+		&--message {  
+			@include col(four);    
+			display: flex;
+			flex-direction: column;
+			
+			@include mq(m) {
+				margin-bottom: 2rem;
+			}
+			
+			.form__input {
+				background: $dark;
+				border-color: #444;
+				border-radius: 3px;
+				margin-bottom: .5rem;
+				padding: .3rem;
+			} 
+				
+			input[type='submit'] {
+				background: $secondary;
+				border: none;
+				border-radius: 3px;
+				margin-bottom: .5rem;
+				padding: .3rem;
+				cursor: pointer;
+				text-transform: uppercase;
+				font-weight: bold;
+			}
+		}
+	} 
+}
+
+#google-container {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  background-color: #e7eaf0;
+}
+
+#google-map {
+  position: relative;
+}
+
+#zoom-in, #zoom-out {
+  height: 32px;
+  width: 32px;
+  cursor: pointer;
+  margin-left: 10px;
+  background-color: rgba(74, 126, 184, .9);
+  background-repeat: no-repeat;
+  background-size: 32px 64px;
+  background-image: url('/img/cd-icon-controller.svg');
+}
+.no-touch #zoom-in:hover, .no-touch #zoom-out:hover {
+  background-color: #e4b162;
+}
+@media only screen and (min-width: 768px) {
+  #zoom-in, #zoom-out {
+    margin-left: 50px;
+  }
+}
+
+#zoom-in {
+  background-position: 50% 0;
+  margin-top: 10px;
+  margin-bottom: 1px;
+}
+
+@media only screen and (min-width: 768px) {
+  #zoom-in {
+    margin-top: 50px;
+  }
+}
+
+#zoom-out {
+  background-position: 50% -32px;
+}

@@ -1,0 +1,108 @@
+//Roboto
+
+@import 'https://fonts.googleapis.com/css?family=Roboto:400,500,700,900';
+
+
+$font-one: 'Roboto';
+$font-two: 'Roboto';
+
+$body-font-colour: #666666;
+$heading-font-color: #5d5d5d;
+
+.text-justify {
+  text-align: justify;
+} 
+
+// =======================
+//
+// Responsive Typography
+//
+// =======================
+
+$root-font-size: 18px;
+
+html {
+	font-size: $root-font-size;
+	font-family: $font-two;
+	color: $body-font-colour;
+	vertical-align: middle;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: $font-one;
+	letter-spacing: .1rem;
+	color: $heading-font-color;
+	font-weight: normal;
+}
+
+@mixin type($properties, $min-vw, $max-vw, $min-value, $max-value) {
+  & {
+    @each $property in $properties {
+      #{$property}: $min-value;
+    }
+
+    @media screen and (min-width: $min-vw) {
+      @each $property in $properties {
+        #{$property}: calc(#{$min-value} + #{strip-unit($max-value - $min-value)} * (100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)});
+      }
+    }
+
+    @media screen and (min-width: $max-vw) {
+      @each $property in $properties {
+        #{$property}: $max-value;
+      }
+    }
+  }
+}
+
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+$base-line-height: 1.6;
+$vertical-rhythm: $base-line-height * $root-font-size;
+
+
+body {
+  @include type(font-size, 30rem, 75rem, 0.889rem, 1rem);
+	line-height: $base-line-height; 
+}
+
+p {
+	margin-bottom: $vertical-rhythm;
+}
+
+h1 {
+	@include type(font-size, 30rem, 75rem, 2.986rem, 3.583rem);
+	margin-bottom: $vertical-rhythm * 2;
+}
+
+h2 {
+	@include type(font-size, 30rem, 75rem, 2.488rem, 2.986rem);
+	margin-bottom: $vertical-rhythm / 1;
+}
+
+h3 {
+	@include type(font-size, 30rem, 75rem, 2.074rem, 2.488rem);
+	margin-bottom: $vertical-rhythm / 2;
+}
+
+h4 {
+	@include type(font-size, 30rem, 75rem, 1.728rem, 2.074rem);
+	margin-bottom: $vertical-rhythm / 3;
+}
+
+h4 {
+	@include type(font-size, 30rem, 75rem, 1.44rem, 1.728rem);
+	margin-bottom: $vertical-rhythm / 4;
+}
+
+h5 {
+	@include type(font-size, 30rem, 75rem, 1.2rem, 1.44rem);
+	margin-bottom: $vertical-rhythm / 5;
+}
+
+h6 {
+	@include type(font-size, 30rem, 75rem, 1rem, 1.2rem);
+	margin-bottom: $vertical-rhythm / 6;
+}

@@ -1,0 +1,78 @@
+.promo {
+	@include shadow();
+	padding: 4rem;
+	background-image: url('../img/promo.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	display: flex;
+	justify-content: flex-end;
+	
+	@include mq(m) {
+		padding: .5rem;
+		justify-content: center;
+	}
+	
+	&__content {
+		max-width: 60%;
+		
+		@include mq(m) {
+			max-width: 90%;
+		}
+		
+		h3 {
+			text-transform: uppercase;
+			font-weight: bold;
+			color: #fff;
+			margin-bottom: $vertical-rhythm / 2;
+			line-height: 100%;
+			padding: 1rem;
+			background: $dark;
+			
+			@include mq(m) {
+				margin-bottom: 0;
+			}
+		}
+		
+		p {
+			background: rgba(#fff, .8);
+			margin-bottom: 0;
+			padding: 1rem;
+			color: $body-font-colour;
+		}
+		
+		a {
+			color: #fff;
+			text-transform: uppercase;
+			font-weight: bold;
+			background: #666;
+			width: 60%;
+			max-width: 60%;
+			float: right;
+			padding-left: 4rem;
+			line-height: 2.5;
+			
+			&:after {
+				content: '\f105';
+				font-family: fontawesome;
+				display: inline-block;
+				float: right;
+				text-align: center;
+				width: 50%;
+				background: #333;
+			}
+			
+			@include mq(m) {
+				max-width: 100%;
+				width: 100%;
+				padding-left: 0;
+				text-align: center;
+				
+				&:after {
+					display: none;
+				}
+			}
+			
+		}
+	}
+}

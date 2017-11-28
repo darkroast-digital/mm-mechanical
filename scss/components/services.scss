@@ -1,0 +1,39 @@
+.services__intro {
+	padding-top: 2rem;
+}
+
+.quote {
+	margin: 0 auto;
+	text-align: center;
+	color: $secondary;
+	font-weight: bold;
+	max-width: 80%;
+}
+
+.services__intro,
+.services__maintenance,
+.services__installation {
+	@include row($direction: column);
+	
+	h4 {
+		color: #fff;
+		font-weight: bold;
+		margin-top: $vertical-rhythm * 2;
+		text-transform: uppercase;
+	}
+	
+	ul {
+		margin-bottom: $vertical-rhythm;
+		
+		li {
+			&:before {
+				content: "-";
+				margin-right: 1rem;
+			}
+		}
+	}
+}
+
+.services__installation {
+	margin-bottom: 2rem;
+}

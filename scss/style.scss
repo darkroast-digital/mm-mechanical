@@ -1,0 +1,281 @@
+// *********************************************************************
+// *********************************************************************
+// *********************************************************************
+
+// Reset ================================================================
+
+@import 'reset/reset';
+
+// Imports ==============================================================
+
+@import 'partials/_layout'; 
+@import 'partials/_colors';    
+@import 'partials/_typography';
+@import 'partials/_mixins';
+@import 'partials/_easing';
+@import 'partials/_buttons';
+@import 'partials/_edit';
+
+// Helpers ==============================================================
+
+//@include edit();
+
+@include selection();
+
+// Mixins ===============================================================
+
+@mixin shadow {
+	box-shadow: inset 0 20px 30px 0 rgba($dark, .6);
+}
+
+// **********************************************************************
+// **********************************************************************
+// **********************************************************************
+
+body {
+	background: #333;
+	color: #fff;
+}
+
+@import 'components/nav';
+@import 'components/hero';
+@import 'components/cta';                   
+@import 'components/promo'; 
+@import 'components/hp-contact';
+@import 'components/breadcrumb';
+@import 'components/services';
+@import 'components/products'; 
+@import 'components/learn-more';  
+@import 'components/faq';
+@import 'components/contact';
+@import 'components/footer';
+
+////////////////////////////////////
+
+.menu__trigger {
+	position: fixed;
+	top: 1rem;
+	right: 1rem;
+	z-index: 70;
+	display: none;  
+	
+	@include mq(m) {
+		display: block;
+	}
+	 
+	span {     
+		display: block;
+		height: 3px;
+		width: 30px;
+		background: $secondary;
+		margin-bottom: 6px;
+		@include transition();
+	}
+}
+
+.menu {
+	position: fixed;
+	z-index: 60;
+	background: $dark;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	flex-direction: column;
+	opacity: 0;
+	visibility: hidden;
+	pointer-events: none;
+	@include transition();
+	
+	a {
+		display: block;
+		
+		img {
+			height: 50px;
+		}
+	}
+	
+	&__nav {
+		
+		a {
+			display: block;
+			color: #fff;
+			font-weight: bold;
+			text-transform: uppercase;
+			font-size: 1.5rem;
+		}
+	}
+}
+
+.menu__trigger.is--open {
+	
+	span {
+		
+		&:first-of-type {
+			transform: translateY(9px) rotate(45deg);
+		}
+		
+		&:nth-of-type(2) {
+			opacity: 0;
+		}
+		
+		&:last-of-type {
+			transform: translateY(-9px) rotate(-45deg);
+		}
+	}
+}
+
+
+.menu.is--open {
+	opacity: 1;  
+	visibility: visible;
+	pointer-events: all; 
+} 
+
+//
+   
+.special__intro {      
+	@include row();              
+	padding: 3rem 0 2rem;
+	
+	@include mq(m) {
+		display: block;
+	}
+	    
+	&--description {
+		@include col(eight);
+		
+		h2 {
+			color: $secondary;
+			font-weight: bold;
+		} 
+	}
+	
+	&--image {
+		@include col(four);
+		
+		img {
+			height: 100%;
+			width: 100%;
+			object-fit: cover;
+			
+			@include mq(m) {
+				margin: 1rem 0;
+			}   
+		}    
+	}      
+}     
+ 
+.special__points {
+	@include row(); 
+	padding-bottom: 3rem;  
+	
+	&--first,    
+	&--last { 
+		@incldue col(six); 
+		 
+		h6 {
+			font-weight: bold;
+			color: $secondary;       
+		} 
+	} 
+	
+	&--first {
+		margin-right: 2rem;
+	}
+}
+
+.about-us {  
+	background: #252525;
+	
+	h2 {  
+		color: #fff;
+		text-transform: uppercase;
+		font-weight: bold;
+	}
+	
+	&__content { 
+		@include row();
+		position: relative; 
+		z-index: 20; 
+	} 
+	
+	&__copy { 
+		@include col(eight);
+		padding: 3rem 0;
+		margin-right: 4rem;
+		   
+		i {   
+			display: block;
+			margin-bottom: 1rem;
+		} 
+	}       
+	 
+	&__image {
+		@include col(four);
+		display: flex;
+		align-items: flex-end;
+		justify-content: center;
+		position: relative;
+		   
+		@include mq(m) {  
+			display: none;  
+		}   
+		  
+		img {    
+			position: absolute; 
+			bottom: 0;
+			height: 120%;        
+		}         
+	}     
+}  
+
+.brands {
+	padding: 2rem;
+	
+	.brands-content {
+		@include row();
+		display: block;
+		text-align: center;
+		
+		h4 {
+			font-weight: bold;
+			text-transform: uppercase;
+			color: #fff;
+		}
+		
+		ul {
+			display: flex;
+			
+			@include mq(m) {
+				display: block;
+			}
+			
+			li {
+				flex: 1 1 auto;
+				margin-right: 1rem;
+				border: solid 4px #222;
+				
+				@include mq(m) {
+					border: none;
+				}
+				
+				&:last-of-type {
+					margin-right: 0;
+				}
+				
+				img {
+					max-width: 100%; 
+					margin-bottom: -6px;
+				}
+			}
+		}
+		
+		.button {
+			background: $secondary;
+			margin-top: 1rem;
+		}
+	}
+}

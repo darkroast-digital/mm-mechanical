@@ -1,0 +1,242 @@
+// breakpoints
+
+$s:     480px;
+$m:     768px;
+$l:     1200px;
+$xl:    1440px;
+
+// media queries
+
+@mixin mq($canvas) {
+  @if $canvas == s {
+   @media only screen and (max-width: $s) { @content; }
+  }
+  @else if $canvas == m {
+   @media only screen and (max-width: $m) { @content; }
+  }
+  @else if $canvas == l {
+   @media only screen and (max-width: $l) { @content; }
+  }
+	@else if $canvas == xl {
+   @media only screen and (min-width: $xl) { @content; }
+  }
+}
+
+$gutter: 0;  // Gutter is a flex-basis mystery???????
+
+$one: 8.33333333%;
+
+$two: 16.66666667%;
+
+$three: 25%;
+
+$four: 33.33333333%;
+
+$five: 41.66666667%;
+ 
+$six: 50%;
+
+$seven: 58.33333333%; 
+
+$eight: 66.66666667%;
+
+$nine: 75%;
+
+$ten: 83.33333333%;
+ 
+$eleven: 91.66666667%;
+
+@mixin container($maw: 1200px) {
+	max-width: $maw;
+	margin: 0 auto;
+}
+
+@mixin row($maw: 1200px, $direction: row) {
+  max-width: $maw;
+  margin: 0 auto;
+	display: flex;
+	flex-direction: $direction;
+	
+	@include mq(m) {
+		flex-direction: column;
+		padding: 0 .5rem;
+	}
+}
+
+@mixin col(){
+	flex: 1;
+}
+
+@mixin col($col, $gutter: .5rem) {
+	@if $col == auto {
+   	flex: 1;
+		margin: 0 $gutter;
+  }
+  @else if $col == one {
+   	flex: 1;
+		flex-basis: $one;
+		max-width: $one;
+		margin: 0 $gutter;
+		
+		@include mq(m) {
+			flex-basis: auto;
+			max-width: 100%;
+		}
+  }
+  @else if $col == two {
+   	flex: 1;
+		flex-basis: $two;
+		max-width: $two;
+		margin: 0 $gutter;
+		
+		@include mq(m) {
+			flex-basis: auto;
+			max-width: 100%;
+		}
+  }
+  @else if $col == three {
+   	flex: 1;
+		flex-basis: $three;
+		max-width: $three;
+		margin: 0 $gutter;
+		
+		@include mq(m) {
+			flex-basis: auto;
+			max-width: 100%;
+		}
+  }
+  @else if $col == four {
+   	flex: 1;
+		flex-basis: $four;
+		max-width: $four;
+		margin: 0 $gutter;
+		
+		@include mq(m) {
+			flex-basis: auto;
+			max-width: 100%;
+		}
+  }
+  @else if $col == five {
+   	flex: 1;
+		flex-basis: $five;
+		max-width: $five;
+		margin: 0 $gutter;
+		
+		@include mq(m) {
+			flex-basis: auto;
+			max-width: 100%;
+		}
+  }
+  @else if $col == six {
+   	flex: 1;
+		flex-basis: $six;
+		max-width: $six;
+		margin: 0 $gutter;
+		
+		@include mq(m) {
+			flex-basis: auto;
+			max-width: 100%;
+		}
+  }
+  @else if $col == seven {
+   	flex: 1;
+		flex-basis: $seven;
+		max-width: $seven;
+		margin: 0 $gutter;
+		
+		@include mq(m) {
+			flex-basis: auto;
+			max-width: 100%;
+		}
+  }
+  @else if $col == eight {
+   	flex: 1;
+		flex-basis: $eight;
+		max-width: $eight;
+		margin: 0 $gutter;
+		
+		@include mq(m) {
+			flex-basis: auto;
+			max-width: 100%;
+		}
+  }
+  @else if $col == nine {
+   	flex: 1;
+		flex-basis: $nine;
+		max-width: $nine;
+		margin: 0 $gutter;
+		
+		@include mq(m) {
+			flex-basis: auto;
+			max-width: 100%;
+		}
+  }
+  @else if $col == ten {
+   	flex: 1;
+		flex-basis: $ten;
+		max-width: $ten;
+		margin: 0 $gutter;
+		
+		@include mq(m) {
+			flex-basis: auto;
+			max-width: 100%;
+		}
+  }
+  @else if $col == eleven {
+   	flex: 1;
+		flex-basis: $eleven;
+		max-width: $eleven;
+		margin: 0 $gutter;
+		
+		@include mq(m) {
+			flex-basis: auto;
+			max-width: 100%;
+		}
+  }
+}
+
+@mixin offset($col) {
+  @if $col == one {
+		margin-left: $one;
+  }
+  @else if $col == two {
+		margin-left: $two;
+  }
+  @else if $col == three {
+		margin-left: $three;
+  }
+  @else if $col == four {
+		margin-left: $four;
+  }
+  @else if $col == five {
+		margin-left: $five;
+  }
+  @else if $col == six {
+		margin-left: $six;
+  }
+  @else if $col == seven {
+		margin-left: $seven;
+  }
+  @else if $col == eight {
+		margin-left: $eight;
+  }
+  @else if $col == nine {
+		margin-left: $nine;
+  }
+  @else if $col == ten {
+		margin-left: $ten;
+  }
+  @else if $col == eleven {
+		margin-left: $eleven;
+  }
+}
+
+@mixin flex-right() {
+	margin-left: auto;
+}
+
+@mixin flex-left() {
+	margin-right: auto;
+}
+
+

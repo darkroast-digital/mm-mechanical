@@ -1,0 +1,46 @@
+.footer {
+	background: $dark;
+	padding: 1.5rem 0;
+	
+	&__copyright {
+		
+		a {
+			
+			&:first-of-type {
+				color: $secondary;
+			}
+		}
+	}
+	
+	&__content {
+		@include row();
+		font-size: .8rem;
+		color: $body-font-colour;
+		
+		@include mq(m) {
+			display: block;
+		}
+		
+		a {
+			@include transition();
+			color: $body-font-colour;
+			
+			&:hover {
+				color: #888; 
+			}
+		}
+		
+		ul {
+			display: flex;
+			@include flex-right();
+			
+			@include mq(m) {
+				display: block;
+			}
+			
+			a {
+				padding: 0.5rem;
+			}
+		}
+	}
+}

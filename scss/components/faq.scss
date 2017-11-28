@@ -1,0 +1,13 @@
+.faq {
+	@include row();
+	padding: 3rem 0;
+	
+	h6 {
+		font-weight: bold;
+		color: $secondary;
+	}
+	
+	&__question {
+		margin-bottom: $vertical-rhythm * 2;  
+	}
+}

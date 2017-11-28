@@ -1,0 +1,5 @@
+@mixin edit($bg: green) {
+  * {
+    background: rgba($bg, 0.1);
+  }
+}

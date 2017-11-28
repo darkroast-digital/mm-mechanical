@@ -1,0 +1,98 @@
+.learn__intro {
+	padding-top: 3rem;
+	@include row();
+}
+
+.learn__companies {
+	padding-top: 1rem;
+	padding-bottom: 3rem;
+	@include row();
+	
+	generate-grid: sizes(1/4 1/4 1/4 1/4);
+	
+	@include mq(m) {
+		width: 100%;
+		generate-grid: sizes(1/1); 
+	}
+}
+
+.company__profile {
+	margin-bottom: $vertical-rhythm;
+	
+	&--image {
+		background: #fff;
+		padding: 1rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		
+		img {
+			max-width: 80%;
+		}
+		
+		&:after {
+			content: '';
+			position: absolute;
+			height: 100%;
+			width: 100%;
+			background: rgba(#000, .4);
+			opacity: 1;
+			@include transition();
+		}
+	}
+	
+	&--title {
+		background: $dark;
+		color: #fff;
+		padding: .5rem;
+		font-size: 1rem;
+		font-weight: bold;
+		margin: 0;
+		@include transition();
+		color: #666;
+	}
+	
+	&--link {
+		display: flex;
+		line-height: 0;
+		background: #666;
+		align-items: center;
+		color: #fff;
+		font-size: .8rem; 
+		padding-left: .5rem;
+		@include transition();
+		
+		i {
+			background: rgba(#000, .3);
+			line-height: 2.5;
+			width: 40px;
+			text-align: center;
+			@include flex-right();
+			font-size: 1rem;
+			@include transition();
+		}
+	}
+	
+	&:hover {
+		
+		.company__profile--image {
+			
+			&:after {
+				opacity: 0;
+			}
+		}
+		
+		.company__profile--title {
+			color: #fff;
+		}
+		
+		.company__profile--link {
+			background: $secondary;
+			
+			i {
+				width: 80px;
+			}
+		}
+	}
+}

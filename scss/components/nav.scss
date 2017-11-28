@@ -1,0 +1,97 @@
+.nav {
+	width: 100%;
+	background: $dark;
+	padding: 0 0 1rem;
+	position: fixed;
+	z-index: 30;
+	@include transition();
+	
+	&__topbar {
+		display: flex;
+		background: $darker;
+		margin-bottom: 1rem;
+		padding: .2rem 2rem;
+		
+		@include mq(m) {
+			display: none;
+		}
+		
+		a {
+			font-size: .8rem;
+			color: $body-font-colour;
+		}
+	}
+	
+	&__socials {
+		@include flex-right();
+		display: flex;
+		
+		a {
+			margin-right: 1rem;
+		}
+	}
+	
+	&__content {
+		@include row();
+		align-items: center;
+	}
+	
+	&__brand {
+		display: block;
+		
+		img {
+			height: 50px;
+		
+			@include mq(m) {
+				margin-top: 10px;
+				height: 40px;
+			}
+		}
+	}
+	
+	&__navbar {
+		display: flex; 
+		@include flex-right();
+		
+		@include mq(m) {
+			display: none;
+		}
+		
+		a {
+			display: block;
+			padding: 1rem 1rem;
+			font-weight: bold;
+			text-transform: uppercase;
+			@include type(font-size, 30rem, 75rem, 0.67rem, 0.75rem);
+			@include transition();
+			color: #fff;
+			position: relative;
+			
+			&:before {
+				content: '';
+				position: absolute;
+				top: -1rem;
+				left: 0;
+				height: 5px;
+				width: 100%;
+				background: $secondary;
+				transform: scaleY(0);
+				transform-origin: top;
+				@include transition();
+			}
+			
+			&:hover {
+				color: $secondary;
+				
+				&:before {
+					transform: scaleY(1);
+				}
+			}
+		}
+	}
+}
+
+.nav.is--scrolled {
+	transform: translateY(-35px);
+	box-shadow: 0 0 30px 0 #000;
+}

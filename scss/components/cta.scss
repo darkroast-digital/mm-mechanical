@@ -1,0 +1,67 @@
+.cta {
+	@include shadow();
+	padding: 4rem;
+	background-image: url('../img/cta.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	
+	@include mq(m) {
+		padding: 1rem;		
+	}
+	
+	&__content { 
+		@include row();
+		background: rgba($dark, .6);
+		align-items: center;
+		padding: 1rem;
+		
+		@include mq(m) {
+			text-align: center;	
+		}
+		
+		div {
+			padding: 1rem;
+		}
+		
+		img {
+			
+			@include mq(m) {
+				display: none;
+			}
+		}
+		
+		h3 {
+			text-transform: uppercase;
+			font-weight: bold;	
+			color: #fff;
+			margin-bottom: 0;
+		}
+		
+		h6 {
+			text-transform: uppercase;
+			color: #fff;
+		}
+		
+		li {
+			color: #fff;
+			text-transform: uppercase;
+		}
+		
+		.button {
+			background: #fff;
+			color: $body-font-colour;
+			border-radius: 3px;
+			padding-left: 4rem;
+			padding-right: 4rem;
+			text-transform: uppercase;
+			margin-left: 2rem;
+			@include transition();
+			
+			&:hover {
+				background: $secondary;
+				color: #fff;
+			}
+		}
+	}
+}

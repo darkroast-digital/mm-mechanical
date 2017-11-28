@@ -1,0 +1,306 @@
+// *********************************************************************
+// Buttons *************************************************************
+// *********************************************************************
+
+.button {
+	display: inline-block;
+	padding: .5rem 1.5rem;
+	background: #000;
+	border-radius: 3px;
+	color: #fff;
+	text-align: center;
+	@include transition();
+	
+	&:hover {
+		background: lighten(#000, 20%);
+	}
+}
+
+.is-wide {
+	padding-left: 2.5rem;
+	padding-right: 2.5rem;
+}
+
+.is-rounded {
+	border-radius: 5px;
+}
+
+.is-round {
+	border-radius: 50px;
+}
+
+.button.is-primary {
+	background: $primary;
+	border: solid 1px  $primary;
+	
+	&:hover {
+		background: lighten($primary, 10%);
+		border-color: lighten($primary, 10%);
+	}
+}
+
+.button.is-secondary {
+	background: $secondary;
+	border: solid 1px  $secondary;
+	
+	&:hover {
+		background: lighten($secondary, 10%);
+		border-color: lighten($secondary, 10%);
+	}
+}
+
+.button.is-info {
+	background: $info;
+	border: solid 1px $info;
+	
+	&:hover {
+		background: lighten($info, 10%);
+		border-color: lighten($info, 10%);
+	}
+}
+
+.button.is-success {
+	background: $success;
+	border: solid 1px $success;
+	
+	&:hover {
+		background: lighten($success, 10%);
+		border-color: lighten($success, 10%);
+	}
+}
+
+.button.is-warning {
+	background: $warning;
+	border: solid 1px $warning;
+	
+	&:hover {
+		background: lighten($warning, 10%);
+		border-color: lighten($warning, 10%);
+	}
+}
+
+.button.is-danger {
+	background: $danger;
+	border: solid 1px $danger;
+	
+	&:hover {
+		background: lighten($danger, 10%);
+		border-color: lighten($danger, 10%);
+	}
+}
+
+.button.is-light {
+	background: $light;
+	color: $dark;
+	border: solid 1px $light;
+	
+	&:hover {
+		background: lighten($light, 5%);
+		border-color: lighten($light, 5%);
+	}
+}
+
+.button.is-dark {
+	background: $dark;
+	border: solid 1px $dark;
+	
+	&:hover {
+		background: lighten($dark, 10%);
+		border-color: lighten($dark, 10%);
+	}
+}
+
+.button.is-primary.has-shadow {
+	box-shadow: 0 5px 20px 0 fade-out($primary, .2);
+	
+	&:hover {
+		box-shadow: 0 15px 20px -10px fade-out($primary, .2);
+	}
+}
+
+.button.is-secondary.has-shadow {
+	box-shadow: 0 5px 20px 0 fade-out($secondary, .2);
+	
+	&:hover {
+		box-shadow: 0 15px 20px -10px fade-out($secondary, .2);
+	}
+}
+
+.button.is-info.has-shadow {
+	box-shadow: 0 5px 20px 0 fade-out($info, .2);
+	
+	&:hover {
+		box-shadow: 0 15px 20px -10px fade-out($info, .2);
+	}
+}
+
+.button.is-success.has-shadow {
+	box-shadow: 0 5px 20px 0 fade-out($success, .2);
+	
+	&:hover {
+		box-shadow: 0 15px 20px -10px fade-out($success, .2);
+	}
+}
+
+.button.is-warning.has-shadow {
+	box-shadow: 0 5px 20px 0 fade-out($warning, .2);
+	
+	&:hover {
+		box-shadow: 0 15px 20px -10px fade-out($warning, .2);
+	}
+}
+
+.button.is-danger.has-shadow {
+	box-shadow: 0 5px 20px 0 fade-out($danger, .2);
+	
+	&:hover {
+		box-shadow: 0 15px 20px -10px fade-out($danger, .2);
+	}
+}
+
+.button.is-light.has-shadow {
+	box-shadow: 0 5px 20px 0 fade-out($dark, .5);
+	
+	&:hover {
+		box-shadow: 0 15px 20px -10px fade-out($dark, .6);
+	}
+}
+
+.button.is-dark.has-shadow {
+	box-shadow: 0 5px 20px 0 fade-out($dark, .5);
+	
+	&:hover {
+		box-shadow: 0 15px 20px -10px fade-out($dark, .2);
+	}
+}
+
+.button.is-primary.has-dimension {
+	border-top-color: lighten($primary, 30%);
+	border-bottom-color: darken($primary, 30%);
+}
+
+.button.is-secondary.has-dimension {
+	border-top-color: lighten($secondary, 30%);
+	border-bottom-color: darken($secondary, 30%);
+}
+
+.button.is-info.has-dimension {
+	border-top-color: lighten($info, 30%);
+	border-bottom-color: darken($info, 30%);
+}
+
+.button.is-success.has-dimension {
+	border-top-color: lighten($success, 30%);
+	border-bottom-color: darken($success, 30%);
+}
+
+.button.is-warning.has-dimension {
+	border-top-color: lighten($warning, 30%);
+	border-bottom-color: darken($warning, 30%);
+}
+
+.button.is-danger.has-dimension {
+	border-top-color: lighten($danger, 30%);
+	border-bottom-color: darken($danger, 30%);
+}
+
+.button.is-light.has-dimension {
+	border-top-color: lighten($light, 30%);
+	border-bottom-color: darken($light, 30%);
+}
+
+.button.is-dark.has-dimension {
+	border-top-color: lighten($dark, 30%);
+	border-bottom-color: darken($dark, 30%);
+}
+
+.button.is-ghost {
+	background: transparent;
+	border: solid 2px #000;
+	color: #000;
+	
+	&:hover {
+		background: #000;
+		color: #fff;
+	}
+}
+
+.button.is-primary.is-ghost {
+	border-color: $primary;
+	color: $primary;
+	
+	&:hover {
+		background: $primary;
+		color: #fff;
+	}
+}
+
+.button.is-secondary.is-ghost {
+	border-color: $secondary;
+	color: $secondary;
+	
+	&:hover {
+		background: $secondary;
+		color: #fff;
+	}
+}
+
+.button.is-info.is-ghost {
+	border-color: $info;
+	color: $info;
+	
+	&:hover {
+		background: $info;
+		color: #fff;
+	}
+}
+
+.button.is-success.is-ghost {
+	border-color: $success;
+	color: $success;
+	
+	&:hover {
+		background: $success;
+		color: #fff;
+	}
+}
+
+.button.is-warning.is-ghost {
+	border-color: $warning;
+	color: $warning;
+	
+	&:hover {
+		background: $warning;
+		color: #fff;
+	}
+}
+
+.button.is-danger.is-ghost {
+	border-color: $danger;
+	color: $danger;
+	
+	&:hover {
+		background: $danger;
+		color: #fff;
+	}
+}
+
+.button.is-light.is-ghost {
+	border-color: $light;
+	color: $light;
+	
+	&:hover {
+		background: $light;
+		color: $dark;
+	}
+}
+
+.button.is-dark.is-ghost {
+	border-color: $dark;
+	color: $dark;
+	
+	&:hover {
+		background: $dark;
+		color: #fff;
+	}
+}
